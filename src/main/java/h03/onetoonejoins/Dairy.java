@@ -61,10 +61,10 @@ public class Dairy {
 
 	@Override
 	public String toString() {
-		return "Dairy [dairy_id=" + dairy_id + ", dairy=" + dairy + "]";
+		return "Dairy [dairy_id=" + dairy_id + ", dairy=" + dairy + ", student=" + student + "]";
 	}
-	
-	
+
+
 	
 	
 	
