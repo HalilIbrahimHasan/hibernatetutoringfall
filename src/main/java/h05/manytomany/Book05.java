@@ -2,9 +2,9 @@ package h05.manytomany;
 
 import java.util.*;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 @Entity
 public class Book05 {
@@ -12,7 +12,7 @@ public class Book05 {
 	@Id
 	private int book_id;
 	private String book_name;
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany(mappedBy="booksList")
 	private List<Student05> studentsList = new ArrayList(); 
 	
 	public Book05() {
@@ -59,8 +59,10 @@ public class Book05 {
 
 	@Override
 	public String toString() {
-		return "Book05 [book_id=" + book_id + ", book_name=" + book_name + "]";
-	};
+		return "Book05 [book_id=" + book_id + ", book_name=" + book_name + ", studentsList=" + studentsList + "]";
+	}
+
+
 	
 	
 	

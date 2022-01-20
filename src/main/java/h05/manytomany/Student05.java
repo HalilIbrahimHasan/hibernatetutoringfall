@@ -5,6 +5,8 @@ import java.util.*;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 @Entity
 public class Student05 {
@@ -13,8 +15,8 @@ public class Student05 {
 	private int std_id;
 	private String name;
 	private int grade;
-	
-	@ManyToMany(mappedBy="studentsList")// when we make updates, deletes, creations we force them using cascadeType.ALL
+	@ManyToMany(cascade = CascadeType.ALL)// when we make updates, deletes, creations we force them using cascadeType.ALL
+	@JoinTable(name="STUDENT05_BOOK05", joinColumns = {@JoinColumn(name="std_id")},inverseJoinColumns = {@JoinColumn(name="book_id")} )
 	private List<Book05> booksList = new ArrayList();
 	
 	public Student05() {
@@ -76,7 +78,7 @@ public class Student05 {
 
 	@Override
 	public String toString() {
-		return "Student05 [std_id=" + std_id + ", name=" + name + ", grade=" + grade + ", booksList=" + booksList + "]";
+		return "Student05 [std_id=" + std_id + ", name=" + name + ", grade=" + grade  + "]";
 	}
 
 
