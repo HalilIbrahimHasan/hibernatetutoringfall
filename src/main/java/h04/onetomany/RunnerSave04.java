@@ -25,18 +25,18 @@ public class RunnerSave04 {
 		
 		std1.getBookList().add(b1);
 		std1.getBookList().add(b2);
-		std1.setBookList(std1.getBookList());
 		
-		std2.getBookList().add(b2);
+		
 		std2.getBookList().add(b3);
+		std2.getBookList().add(b4);
 		std2.setBookList(std2.getBookList());
 
 		b1.setStudent(std1);
-//		b2.setStudent(std1);
+		b2.setStudent(std1);
 		
 		
-//		b2.setStudent(std2);
 		b3.setStudent(std2);
+		b4.setStudent(std2);
 		
 		
 		System.out.println(b3);
