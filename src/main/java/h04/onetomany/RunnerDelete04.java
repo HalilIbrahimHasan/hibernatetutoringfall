@@ -23,6 +23,15 @@ public class RunnerDelete04 {
 		
 		Transaction tx= session.beginTransaction();
 		
+		String sqlQuery  = "DELETE FROM Student04";
+		
+//		int numberOfRowsDeleted  = session.createQuery(sqlQuery).executeUpdate();
+//		System.out.println(numberOfRowsDeleted +" records have been deleted!");
+		
+		
+		std = session.get(Student04.class, 103);
+		
+		session.delete(std);
 		
 		
 		tx.commit();

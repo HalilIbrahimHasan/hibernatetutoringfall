@@ -1,35 +1,36 @@
-package h04.onetomany;
+package h05.manytomany;
 
 import java.util.*;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
+import javax.persistence.ManyToMany;
 @Entity
-public class Student04 {
-	
+public class Student05 {
+
 	@Id
 	private int std_id;
 	private String name;
 	private int grade;
 	
-	@OneToMany(mappedBy="student",orphanRemoval = true, cascade = CascadeType.REMOVE)
-	private List<Book04> bookList = new ArrayList();
+	@ManyToMany(mappedBy="studentsList")// when we make updates, deletes, creations we force them using cascadeType.ALL
+	private List<Book05> booksList = new ArrayList();
 	
-	
-	public Student04() {
+	public Student05() {
 		
 	}
 
-	public Student04(int std_id, String name, int grade) {
-		
+
+	public Student05(int std_id, String name, int grade, List<Book05> booksList) {
+	
 		this.std_id = std_id;
 		this.name = name;
 		this.grade = grade;
-		
+		this.booksList = booksList;
 	}
+
+
 
 
 
@@ -37,45 +38,52 @@ public class Student04 {
 		return std_id;
 	}
 
+
 	public void setStd_id(int std_id) {
 		this.std_id = std_id;
 	}
+
 
 	public String getName() {
 		return name;
 	}
 
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 	public int getGrade() {
 		return grade;
 	}
 
+
 	public void setGrade(int grade) {
 		this.grade = grade;
 	}
 
-	public List<Book04> getBookList() {
-		return bookList;
+
+	public List<Book05> getBooksList() {
+		return booksList;
 	}
 
-	public void setBookList(List<Book04> bookList) {
-		this.bookList = bookList;
+
+	public void setBooksList(List<Book05> booksList) {
+		this.booksList = booksList;
 	}
+
 
 	@Override
 	public String toString() {
-		return "Student04 [std_id=" + std_id + ", name=" + name + ", grade=" + grade + ", bookList="  + "]";
+		return "Student05 [std_id=" + std_id + ", name=" + name + ", grade=" + grade + ", booksList=" + booksList + "]";
 	}
 
-	
-	
-	
-	
-	
-	
-	
 
+	
+	
+	
+	
+	
+	
 }
