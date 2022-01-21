@@ -27,13 +27,13 @@ public class RunnerFetch03 {
 		
 //		std = s.get(Student03.class, 101);
 		
-//		dairy = s.get(Dairy.class, 12);
-		
+		dairy = s.get(Dairy.class, 12);
+		dairy = s.get(Dairy.class, 12);
 		
 		tx.commit();
 		
 
-//		System.out.println(dairy);
+		System.out.println(dairy);
 		
 		
 //		String sqlQuery2 = "Select s.student_name, d.dairy, s.grade,  s.student_id "
@@ -120,17 +120,17 @@ public class RunnerFetch03 {
 		
 		
 		
-		String hqlQuery4 = "FROM Student03 s FULL JOIN Dairy d ON s.student_id = d.student";
-		
-		List<Object[]> hqlList4 = s.createQuery(hqlQuery4).getResultList();
-		
-		
-		for(Object[] o : hqlList4) {
-			
-			
-			System.out.println(Arrays.toString(o));
-			
-		}
+//		String hqlQuery4 = "FROM Student03 s FULL JOIN Dairy d ON s.student_id = d.student";
+//		
+//		List<Object[]> hqlList4 = s.createQuery(hqlQuery4).getResultList();
+//		
+//		
+//		for(Object[] o : hqlList4) {
+//			
+//			
+//			System.out.println(Arrays.toString(o));
+//			
+//		}
 		
 	}
 
