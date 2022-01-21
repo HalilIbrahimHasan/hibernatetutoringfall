@@ -9,15 +9,10 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-import h06.lazy_fetch_eager_fetch.Book06;
 
 @Entity
 
-@Cacheable
-@Cache(region="Student07",usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Student07 {
 
 	
